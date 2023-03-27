@@ -9,11 +9,11 @@ The price should be displayed to the nearest cent (e.g. $33.59, not $33.59182329
 """
 import random
 
-MAX_INCREASE = 0.1  # 10%
-MAX_DECREASE = 0.05  # 5%
-MIN_PRICE = 1.0
-MAX_PRICE = 100.0
-INITIAL_PRICE = 10.0
+MAX_INCREASE = (random.uniform(0.09, 0.12))
+MAX_DECREASE = (random.uniform(0.01, 0.06))
+MIN_PRICE = (random.uniform(0.01, 1))
+MAX_PRICE = (random.uniform(100, 1000))
+INITIAL_PRICE = (random.uniform(5, 20))
 OUTPUT_FILE = "results_capitalist_conrad.txt"
 
 price = INITIAL_PRICE
