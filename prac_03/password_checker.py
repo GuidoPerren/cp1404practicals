@@ -8,6 +8,8 @@ MAX_LENGTH = 6
 SPECIAL_CHARS_REQUIRED = False
 SPECIAL_CHARACTERS = "!@#$%^&*()_-=+`~,./'[]<>?{}|\\"
 
+PRINT_CHAR_COUNT = False
+
 
 def main():
     """Program to get and check a user's password."""
@@ -28,23 +30,37 @@ def main():
 
 def is_valid_password(password):
     """Determine if the provided password is valid."""
-    # TODO: if length is wrong, return False
+    if not MIN_LENGTH <= len(password) <= MAX_LENGTH:
+        return False
 
     count_lower = 0
     count_upper = 0
     count_digit = 0
     count_special = 0
     for char in password:
-        # TODO: count each kind of character (use str methods like isdigit)
+        if str.islower(char):
+            count_lower+= 1
+        if str.isupper(char):
+            count_upper+= 1
+        if str.isdigit(char):
+            count_digit+= 1
+        if char in SPECIAL_CHARACTERS:
+            count_special += 1
         pass
 
-    # TODO: if any of the 'normal' counts are zero, return False
+    if PRINT_CHAR_COUNT:
+        print(f"Lower characters: {count_lower}")
+        print(f"Upper characters: {count_upper}")
+        print(f"Digit characters: {count_digit}")
+        print(f"Special characters: {count_special}")
 
-    # TODO: if special characters are required, then check the count of those
-    # and return False if it's zero
-
-    # if we get here (without returning False), then the password must be valid
-    return True
+    check_not_zero = count_lower * count_upper * count_digit
+    if SPECIAL_CHARS_REQUIRED:
+        check_not_zero = check_not_zero * count_special
+    if check_not_zero > 0:
+        return True
+    else:
+        return False
 
 
 main()
