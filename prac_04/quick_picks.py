@@ -28,7 +28,8 @@ def main():
             random_number_list = generate_unique_randoms(
                 SMALLEST_NUMBER, LARGEST_NUMBER, AMOUNT_OF_NUMBERS_PER_LINE)
             random_number_list = sorted(random_number_list)
-            print_formated_random_numbers(random_number_list, (len(str(LARGEST_NUMBER)) + 1) )
+            print(" ".join(f"{number:2}" for number in random_number_list))
+            #print_formated_random_numbers(random_number_list, (len(str(LARGEST_NUMBER)) + 1) )
 
     except ValueError:
         print("Please enter an integer")
