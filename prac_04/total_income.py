@@ -14,8 +14,12 @@ def main():
         incomes.append(income)
 
     print("\nIncome Report\n-------------")
+    print_income_report(incomes)
+
+
+def print_income_report(incomes):
     total = 0
-    for number_of_months in range(1, months + 1):
+    for number_of_months in range(1, len(incomes) + 1):
         income = incomes[number_of_months - 1]
         total += income
         print("Month {:2} - Income: ${:10.2f} Total: ${:10.2f}".format(number_of_months, income, total))
