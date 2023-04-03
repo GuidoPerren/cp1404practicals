@@ -7,8 +7,8 @@ FILENAME = "subject_data.txt"
 
 
 def main():
-    data = get_data()
-    print(data)
+    class_info_list = get_data()
+    print_class_informations(class_info_list)
 
 
 def get_data():
@@ -22,6 +22,10 @@ def get_data():
         list_of_parts.append(parts)
     input_file.close()
     return list_of_parts
+
+def print_class_informations(class_info_list):
+    for line in class_info_list:
+        print(f"{line[0]} is taught by {line[1]} and has {line[2]} students")
 
 
 main()
