@@ -1,18 +1,25 @@
-
-def main():
-    number_list = []
+def check_username(username):
     username_list = ['jimbo', 'giltson98', 'derekf', 'WhatSup', 'NicolEye', 'swei45', 'BaseInterpreterInterface',
                  'BaseStdIn', 'Command', 'ExecState', 'InteractiveConsole', 'InterpreterInterface', 'StartServer',
                  'bob']
 
+    return (username in username_list)
+
+def main():
+    number_list = []
+
+
     username_input = str(input("Username: "))
-    if(username_input in username_list):
+    if check_username(username_input):
 
         print("Access granted")
 
-        for i in range(0, 5):
-            user_input = int(input("Number: "))
+
+        user_input = int(input("Number 1: "))
+        while user_input > 0:
             number_list.append(user_input)
+            user_input = int(input(f"Number {(len(number_list) + 1)}: "))
+
 
         print(number_list[0])
         print(number_list[-1])
