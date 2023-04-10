@@ -10,7 +10,6 @@ WIDTH_CORRECTION = 1
 def main():
     wimbledon_list = get_wimbledon_data()
     champion_won_dict = {}
-    champion_country_dict = {}
     for wimbledon in wimbledon_list:
         if wimbledon.year != "Year":
             if champion_won_dict.get(wimbledon.champion):
@@ -18,17 +17,21 @@ def main():
             else:
                 champion_won_dict[wimbledon.champion] = 1
 
-            if not champion_country_dict.get(wimbledon.country_champion):
-                champion_country_dict[wimbledon.country_champion] = wimbledon.champion
-
     #Task 1
+    print("Wimbledon Champions: ")
+
+    champion_country_list = []
     longest_champion_name = len(max(champion_won_dict.keys(), key=len)) + WIDTH_CORRECTION
     for champion in dict(sorted(champion_won_dict.items(), key=lambda item: item[1], reverse=True)):
         print(f"{champion:{longest_champion_name}}: {champion_won_dict[champion]}")
+        champion_country_list.append((next((wimbledon for wimbledon in wimbledon_list if wimbledon.champion == champion), None)).country_champion)
 
     #Task 2
-    for country in dict(sorted(champion_country_dict.items())):
-        print(f"{country:4}: {champion_country_dict[country]}")
+    print_string = " ".join(sorted(set(champion_country_list)))
+    print(f"These {len(set(champion_country_list))} countries have won Wimbledon: ")
+    print(print_string)
+
+
 
 
 class Wimbledon:
