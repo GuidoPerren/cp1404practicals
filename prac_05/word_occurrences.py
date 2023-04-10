@@ -1,7 +1,7 @@
 """
 Word Occurrences
 Estimate: 10 minutes
-Actual:   xx minutes
+Actual:   19 minutes
 """
 
 WIDTH_CORRECTION = 1
