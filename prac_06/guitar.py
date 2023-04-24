@@ -11,7 +11,7 @@ class Guitar():
         self.name = name
         self.year = year
         self.cost = cost
-        self.vintage_string = " (vintage)" if (datetime.date.today().year - year) >= 40 else ""
+        self.vintage_string = " (vintage)" if (datetime.date.today().year - year) >= 50 else ""
 
     def __str__(self):
         return f"{self.name} ({self.year}), worth ${self.cost}{self.vintage_string}"
