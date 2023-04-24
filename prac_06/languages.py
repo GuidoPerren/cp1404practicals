@@ -14,6 +14,8 @@ def main():
     print(python)
 
     programming_languages = [python, ruby, visual_basic]
-
+    print("The dynamically typed languages are:")
+    for prog_lang in programming_languages:
+        print(prog_lang.name)
 
 main()
