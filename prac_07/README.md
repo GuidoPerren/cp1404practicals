@@ -16,7 +16,7 @@ def get_exam_format(format):
     if format.upper() == "PAPER":
         print_usefulness
     else:
-        print("Thank you for consideringa normal solution!")
+        print("Thank you for considering a normal solution!")
 ```
 
 ## Some other infos:
