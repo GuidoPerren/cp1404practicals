@@ -24,3 +24,8 @@ def get_exam_format(format):
 - If this makes you angry because it differs from your standards, reconsider those standards.
 - If you still hold onto those standards repeat the step mentioned above until you do.
 - If you still hold onto those standards repeat the step mentioned above until you do.
+
+## Here are the links you crave:
+(took me 5 minutes to browse GitHub, but I get 25% deducted if you have to do literally 2 clicks and if I don't include two links here I'll only get 50% just for the fun of it =DDDDDD.)
+- [PrOgrAmMING PAtTerN]https://github.com/CP1404/Starter/wiki/Programming-Patterns
+- [pRACtIcAl INstructIOn repO]https://github.com/CP1401/Practicals
