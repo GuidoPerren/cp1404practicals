@@ -73,3 +73,18 @@ doctest.testmod()
 # and one more you decide (one that is valid!)
 # test this and watch the tests fail
 # then write the body of the function so that the tests pass
+
+def test_function(phrase):
+    """
+    >>> test_function('hello')
+    'Hello.'
+    >>> test_function('It is an ex parrot.')
+    'It is an ex parrot.'
+    >>> test_function('i wanna go home.')
+    'I wanna go home.'
+    """
+    phrase_list = list(phrase)
+    phrase_list[0] = phrase_list[0].upper()
+    if phrase_list[-1] != ".":
+        phrase_list.append(".")
+    return "".join(phrase_list)
