@@ -9,7 +9,10 @@ from prac_06.car import Car
 
 def repeat_string(s, n):
     """Repeat string s, n times, with spaces in between."""
-    return s * n
+    out_list = []
+    for i in range(0, n):
+        out_list.append(s)
+    return " ".join(out_list)
 
 
 def is_long_word(word, length=5):
@@ -22,7 +25,7 @@ def is_long_word(word, length=5):
     >>> is_long_word("Python", 6)
     True
     """
-    return len(word) > length
+    return len(word) >= length
 
 
 def run_tests():
@@ -31,6 +34,7 @@ def run_tests():
     assert repeat_string("Python", 1) == "Python"
     # the test below should fail
     assert repeat_string("hi", 2) == "hi hi"
+
 
     # TODO: 1. fix the repeat_string function above so that it passes the failing test
     # Hint: "-".join(["yo", "yo"] -> "yo-yo"
@@ -45,7 +49,7 @@ def run_tests():
     # Note that Car's __init__ function sets the fuel in one of two ways:
     # using the value passed in or the default
     # You should test both of these
-    test_car = Car(fuel=10)
+    #test_car = Car(fuel=10)
 
 
 run_tests()
